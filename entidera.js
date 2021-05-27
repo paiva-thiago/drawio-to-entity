@@ -55,7 +55,7 @@ const passarParaEntidade = (linha)=>{
     return ''
 }
 const terminaArquivo = (fs,nomeArquivo,conteudo)=>{
-    conteudo = conteudo + '\n\n}'
+    conteudo = conteudo + '\n\n\t}\n\n}'
     fs.writeFileSync('./cs/'+nomeArquivo+'.cs',conteudo)
     console.log(nomeArquivo+'.cs gerado com sucesso!')
 }

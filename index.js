@@ -14,9 +14,10 @@ let to = ''
 let nomePontoCs = ''
 for(let l of lines){
     let [entidadeNova,nomeDaEntidade] = ef.temosUmaEntidade(l)
-    nomePontoCs = entidadeNova ? nomeDaEntidade : nomePontoCs
+    if( nomePontoCs == '') nomePontoCs = nomeDaEntidade
     if ((entidadeNova)&&(nomeDaEntidade!='PautaEletronica')){
         ef.terminaArquivo(fs,nomePontoCs,to)
+        nomePontoCs = nomeDaEntidade
         to = ''
     }
     to = to+ef.passarParaEntidade(l)
