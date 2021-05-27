@@ -9,7 +9,11 @@
   </a>
 </p>
 
-> Um conversor do XML gerado no diagrams.net para o Entity Framework
+> Um conversor do XML gerado no https://www.diagrams.net para o Entity Framework
+
+## Importante
+
+**O xml exportado nesta ferramenta online deve estar com a opção 'Compactado' desmarcada!**
 
 ## Como usar
 
