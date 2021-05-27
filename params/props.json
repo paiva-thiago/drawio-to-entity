@@ -1,0 +1,14 @@
+{
+    "namespace" : "Project.Domain.Classes",
+    "dirXmlFile" : "pauta",
+    "usingList" : ["Project.Domain.Enum"],
+    "types" : {
+        "id" : "int?",
+        "qt" : "int?",
+        "nr" : "int?",
+        "cd" : "int?",
+        "nm" : "string?",
+        "ds" : "string?",
+        "dt" : "DateTime?"
+    }
+}
