@@ -29,7 +29,7 @@ npx degit paiva-thiago/drawio-to-entity
 
 2. Especifique os nomes das entidades em params/entityNames.json,
 
-3. Especifique também no params/props.json o namespace das Entities em `namespace`,  o nome do xml (sem extensão) em `dirXmlFile` e caso as Entidades importem algo, a lista dos usings em `usingList`.
+3. Especifique também no params/props.json o namespace das Entities em `namespace`,  o nome do xml (sem extensão) em `dirXmlFile`, o nome da primeira Entidade que aparece no arquivo em `firstEntityOnXmlFile` e caso as Entidades importem algo, a lista dos usings em `usingList`.
 
 Após isto, basta um
 ```sh

@@ -1,6 +1,7 @@
 {
     "namespace" : "Project.Domain.Classes",
     "dirXmlFile" : "pauta",
+    "firstEntityOnXmlFile" : "Entity",
     "usingList" : ["Project.Domain.Enum"],
     "types" : {
         "id" : "int?",
