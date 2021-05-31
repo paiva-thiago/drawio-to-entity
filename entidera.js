@@ -15,6 +15,28 @@ namespace ${props.namespace}
     {
 `
     }
+const upperCaseKeys = (obj)=> {
+    let key=''
+    let upKey
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            upKey = key.toUpperCase()
+            if (upKey !== key) {
+                obj[upKey] = obj[key]
+                delete(obj[key])
+            }
+        }
+    }
+    return obj;
+}
+    
+
+const attrType = (n)=>{
+    let upperTypes = upperCaseKeys(props.types)
+    if(n.length<2) return 'var'
+    let tp = upperTypes[n.toUpperCase().substr(0,2)]
+    return tp == undefined ? 'var' : tp
+}    
 const temosUmaEntidade = (linha)=>{
     for(let t of entities){
         if (linha.indexOf(t)>-1){
@@ -33,6 +55,21 @@ const entidade = (linha)=>{
     return ''
 }
 
+const beautifyColumn = (col)=>{
+    if(col.length<2){
+        return col
+    }
+    if(attrType(col)=='var'){
+        return col.substr(0,1).toUpperCase()+col.substr(1).toLowerCase()
+    }
+    let prefix,sufix    
+    prefix =  col.substr(0,1).toUpperCase()+col.substr(1,1).toLowerCase()
+    if(col.length==2){
+        return prefix
+    }
+    sufix = col.substr(2,1).toUpperCase()+col.substr(3).toLowerCase()    
+    return prefix.concat(sufix)
+}
 
 const passarParaEntidade = (linha)=>{
     let temMxCell = linha.indexOf('<mxCell')>-1
@@ -46,7 +83,7 @@ const passarParaEntidade = (linha)=>{
             let coluna = linha.substr(linha.indexOf('value="')+7)
             coluna = coluna.substr(0,coluna.indexOf('"'))
             if(coluna.trim()!=''){
-                return '\n\t public type '+coluna+' { get; set; }'
+                return '\n\t public '+attrType(coluna)+' '+beautifyColumn(coluna)+' { get; set; }'
             }else{
                 return ''
             }
