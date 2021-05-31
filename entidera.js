@@ -15,6 +15,10 @@ namespace ${props.namespace}
     {
 `
     }
+const attrType = (n)=>{
+    let tp = props.types[n.substr(0,2)]
+    return tp == undefined ? 'var' : tp
+}    
 const temosUmaEntidade = (linha)=>{
     for(let t of entities){
         if (linha.indexOf(t)>-1){
@@ -46,7 +50,7 @@ const passarParaEntidade = (linha)=>{
             let coluna = linha.substr(linha.indexOf('value="')+7)
             coluna = coluna.substr(0,coluna.indexOf('"'))
             if(coluna.trim()!=''){
-                return '\n\t public type '+coluna+' { get; set; }'
+                return '\n\t public '+attrType(coluna)+' '+coluna+' { get; set; }'
             }else{
                 return ''
             }

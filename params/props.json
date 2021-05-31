@@ -4,12 +4,12 @@
     "firstEntityOnXmlFile" : "Entity",
     "usingList" : ["Project.Domain.Enum"],
     "types" : {
-        "id" : "int?",
-        "qt" : "int?",
-        "nr" : "int?",
-        "cd" : "int?",
-        "nm" : "string?",
-        "ds" : "string?",
-        "dt" : "DateTime?"
+        "Id" : "int?",
+        "Qt" : "int?",
+        "Nr" : "int?",
+        "Cd" : "int?",
+        "Nm" : "string?",
+        "Ds" : "string?",
+        "Dt" : "DateTime?"
     }
 }
